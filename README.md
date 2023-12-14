@@ -48,7 +48,7 @@ To contribute:
 4. Push to the branch: `git push origin feature/my-feature`
 5. Submit a pull request.
 
-Join the discussion in the [Issues](https://github.com/yourusername/EloSys/issues) section to share ideas, report bugs, or request features.
+Join the discussion in the [Issues](https://github.com/JericHunter/EloSys/issues) section to share ideas, report bugs, or request features.
 
 ## License
 
