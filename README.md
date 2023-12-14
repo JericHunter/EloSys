@@ -22,7 +22,7 @@ To get started with EloSys, follow these steps:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/EloSys.git
+    git clone https://github.com/JericHunter/EloSys.git
     cd EloSys
     ```
 
