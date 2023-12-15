@@ -55,3 +55,40 @@ class Match:
         self.player_b = player_b
         self.result = result
         self.processed = False  # Indicates whether the match result has been processed
+
+    def process_match_result(self):
+        """
+        Process the match result and update player ratings.
+        """
+        if self.result is not None and not self.processed:
+            # Calculate expected outcomes
+            p_a, p_b = calculate_expected_outcome(self.player_a.rating, self.player_b.rating)
+
+            # Update player ratings based on the result
+            if self.result == "wins":
+                self.player_a.rating, self.player_b.rating = update_ratings(self.player_a.rating, self.player_b.rating, p_a)
+            elif self.result == "loss":
+                self.player_b.rating, self.player_a.rating = update_ratings(self.player_b.rating, self.player_a.rating, p_b)
+
+            # Set processed flag to True
+            self.processed = True
+
+    def __str__(self):
+        """
+        Return a string representation of the match.
+        """
+        winner = self.player_a if self.result == "wins" else self.player_b
+        loser = self.player_b if self.result == "wins" else self.player_a
+
+        return f"Match between {winner.player_id} (Winner) and {loser.player_id} (Loser) - Result: Player {winner.player_id} {self.result}"
+
+
+# Example usage
+player1 = Player(player_id=1, rating=1200)
+player2 = Player(player_id=2, rating=1000)
+
+# Create a Match instance
+example_match = Match(player_a=player1, player_b=player2, result="wins")
+
+# Display the match details using the __str__ method
+print(example_match)
