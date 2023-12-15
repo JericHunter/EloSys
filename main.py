@@ -26,3 +26,17 @@ def update_ratings(winner, loser, k_factor=32):
     # Update ratings
     winner.rating += rating_change_winner
     loser.rating += rating_change_loser
+
+def main():
+    # Example usage
+    player1 = Player(player_id=1, rating=1200)
+    player2 = Player(player_id=2, rating=1000)
+
+    # Simulate a match where player1 wins
+    update_ratings(player1, player2)
+
+    print(f"Player {player1.player_id} new rating: {player1.rating}")
+    print(f"Player {player2.player_id} new rating: {player2.rating}")
+
+if __name__ == "__main__":
+    main()
