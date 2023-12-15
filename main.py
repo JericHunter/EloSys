@@ -27,7 +27,7 @@ def update_ratings(winner, loser, k_factor=32):
     winner.rating += rating_change_winner
     loser.rating += rating_change_loser
 
-def main():
+"""def main():
     # Example usage
     player1 = Player(player_id=1, rating=1200)
     player2 = Player(player_id=2, rating=1000)
@@ -40,3 +40,18 @@ def main():
 
 if __name__ == "__main__":
     main()
+"""
+class Match:
+    def __init__(self, player_a, player_b, result=None):
+        """
+        Initialize a Match instance.
+
+        Parameters:
+        - player_a: Player object for player A
+        - player_b: Player object for player B
+        - result: Result of the match (e.g., "win", "draw", "loss")
+        """
+        self.player_a = player_a
+        self.player_b = player_b
+        self.result = result
+        self.processed = False  # Indicates whether the match result has been processed
